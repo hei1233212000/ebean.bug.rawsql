@@ -1,0 +1,10 @@
+.project
+.classpath
+/*.sql
+/*/*.sql
+*.iml
+.idea/
+.settings/
+target/
+logs/
+*.log
