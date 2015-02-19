@@ -1,11 +1,5 @@
 package com.rawsql;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import com.avaje.ebean.EbeanServer;
 import com.avaje.ebean.EbeanServerFactory;
 import com.avaje.ebean.RawSql;
@@ -15,11 +9,18 @@ import com.avaje.ebean.config.ServerConfig;
 import com.entity.SqlUser;
 import com.entity.User;
 import com.google.common.collect.Lists;
+import org.avaje.agentloader.AgentLoader;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class RawSqlTest {
 	private static EbeanServer eb;
 
 	@BeforeClass public static void setUpBeforeClass() throws Exception {
+		AgentLoader.loadAgentFromClasspath("avaje-ebeanorm-agent", "debug=1");
 		ServerConfig config = new ServerConfig();
 		config.setName("test");
 
